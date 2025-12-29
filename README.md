@@ -90,6 +90,8 @@ uv run uvicorn tests.app:app --reload --port 8000
 
 Open http://127.0.0.1:9001 to see runs and steps.
 
+![Example run in Inngest dashboard](img/example_run.png)
+
 ## API Reference
 
 ### `set_step(step)`
