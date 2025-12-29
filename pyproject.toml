@@ -3,7 +3,7 @@ name = "inngest-backed-agents-sdk"
 version = "0.1.0"
 description = "Inngest integration for OpenAI Agents SDK with ambient context for durable tools"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "inngest>=0.5.0",
     "fastapi>=0.115.0",
