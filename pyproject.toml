@@ -1,0 +1,49 @@
+[project]
+name = "inngest-backed-agents-sdk"
+version = "0.1.0"
+description = "Inngest integration for OpenAI Agents SDK with ambient context for durable tools"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "inngest>=0.5.0",
+    "fastapi>=0.115.0",
+    "uvicorn>=0.32.0",
+    "openai-agents>=0.0.3",
+    "httpx>=0.28.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.24.0",
+    "ruff>=0.8.0",
+]
+cost = [
+    "litellm>=1.50.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ty.environment]
+python-version = "3.13"
+
+[dependency-groups]
+dev = [
+    "ty>=0.0.7",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/inngest_agents"]
